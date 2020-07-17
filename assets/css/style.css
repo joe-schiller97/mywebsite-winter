@@ -1,0 +1,714 @@
+
+/* meyerweb standard css reset, with adjustments (public domain)*/
+
+html, body,
+h1, img, u, ul, li,
+article, figure, figcaption, footer, header,
+nav, section, {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+ul li::before {
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end of reset */
+
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+}
+
+/* Global properties */
+main{
+  width:100%;
+  overflow:hidden;
+
+}
+
+.wrapper{
+  width:80%;
+  overflow:hidden;
+  margin-left: 10%;
+}
+
+.ul1{
+  margin:0;
+  padding:0;
+}
+
+/* End of global properties */
+header{
+  background:#ffffff;
+  position: fixed;
+  color:#303030;
+  width: 100%;
+  height 100%;
+  padding-top:25px;
+  min-height:70px;
+  max-height:70px;
+  border-bottom:#303030 2px solid;
+}
+
+/* Header is fixed (for sticky purposes) but has the same min-max height to circumvent responsiveness issues. REsponsiveness addresses in @media query at bottom */
+
+
+header a{
+  color:#303030;
+  text-decoration:none;
+  font-size:16px;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
+  margin-right: 50px;
+}
+
+/* Float and inline settings used in this fashion result in the seperation of the logo and the navbar */
+
+header .logo {
+    width: 200px;
+    margin-left: 30px;
+}
+
+/* Simple image was used as logo. Intended to be .png, but photoshop would not export to .png at time of creation. Header background already white so no issue. */
+
+
+header nav{
+  float:right;
+  margin-top:10px;
+}
+
+header .highlight, header .current a{
+  color:#303030;
+  font-weight:bold;
+  text-decoration: underline;
+}
+
+header a:hover{
+  color:#e0e0e0;
+}
+
+.banner{
+  min-height:500px;
+  margin-top: 92px;
+  background-color: rgba(48, 48, 48);
+  text-align:center;
+  color:#FFFFFF;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/churchill-house-34.jpg');
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+/* Background settings ensure normalised image, color still added in case of failed loading of image */
+
+}
+
+.banner h1{
+  font-size:55px;
+  font-family:Georgia;
+  margin-bottom:10px;
+  padding-top:200px;
+
+}
+
+.pagetitle{
+  min-height:100px;
+  margin-top: 92px;
+  padding-left: 10%;
+  background-color: rgba(48, 48, 48);
+  text-align:center;
+  color:#FFFFFF;
+
+
+}
+
+.darkdisplay{
+  min-height:350px;
+  margin-top: 0px;
+  background-color: rgba(48, 48, 48);
+  text-align:center;
+  color:#FFFFFF;
+
+/* The .darkdisplay acts as the section for the displaying of photos, a version with altered settings for taller images is below */
+
+}
+
+.darkdisplay img{
+  height: 300px;
+  padding: 20px;
+
+/* A standardised height is better than standardised width when displaying images alongside eachother */
+
+}
+
+.darkdisplaytall{
+  min-height:350px;
+  margin-top: 0px;
+  background-color: rgba(48, 48, 48);
+  text-align:center;
+  color:#FFFFFF;
+
+}
+
+.darkdisplaytall img{
+  height: 500px;
+  padding: 20px;
+
+/* Height limit altered for the taller pictures that were shot in portrait mode */
+
+}
+.pagetitle h1{
+  font-size:45px;
+  font-family:Georgia;
+  margin-bottom:10px;
+  padding-top:20px;
+  text-align: left;
+
+}
+
+.column{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width:80%;
+  overflow:hidden;
+  margin-left: 10%;
+
+/* The .column class is for text spaces to be displayed as two columns */
+
+}
+
+.column h1{
+  font-size:25px;
+  font-family:Georgia;
+  margin-bottom:10px;
+  text-align: center;
+
+}
+
+.column p, ul{
+  font-size:20px;
+  font-family:Georgia;
+  margin-bottom:35px;
+  -webkit-columns: 2 200px;
+  -moz-columns: 2 200px;
+  columns: 2 200px;
+  content: "\2022";
+
+/* Responsiveness added for the columns to merge once the screen size is reduced */
+
+}
+
+.light{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width:80%;
+  overflow:hidden;
+  margin-left: 10%;
+
+/* The .light class is the standard class for text display */
+
+}
+
+.light h1{
+  font-size:25px;
+  font-family:Georgia;
+  margin-bottom:10px;
+  text-align: center;
+
+/* Here is an example of text alignment changing, in this case, for the subtitles */
+
+}
+
+.light p{
+  font-size:20px;
+  font-family:Georgia;
+  margin-bottom:35px;
+
+/* These are the settings for the majority of paragraph text displayed */
+
+}
+
+.light ul{
+  font-size:20px;
+  font-family:Georgia;
+  margin-bottom:35px;
+  -webkit-columns: 2 150px;
+  -moz-columns: 2 150px;
+  columns: 2 1000px;
+  content: "\2022";
+
+}
+
+.light img{
+float:right;
+height: 400px;
+align:right;
+padding-left: 35px;
+padding-top: 20px;
+padding-bottom: 20px;
+
+/* This setting is solely for the portrait of Robin Boyd */
+
+}
+
+footer{
+  padding:20px;
+  margin-top:20px;
+  color:#ffffff;
+  background-color:#303030;
+  text-align: center;
+
+/* These settings made for a simple but effective footer */
+
+}
+
+footer p{
+  font-size: 12px;
+}
+
+/* Media Queries */
+@media
+(min-device-width: 768px)
+and (max-device-width : 1024px)  {
+
+/* These are the responsiveness settings for the tablet/ipad, it maintains much of the original settings but with image sizing tweaks */
+
+  header li{
+    float:left;
+    display:inline;
+    padding: 0 5px 0 5px;
+    margin-right: 50px;
+  }
+  .darkdisplay{
+    min-height:200px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplay img{
+    height: 200px;
+    padding: 20px;
+
+  }
+
+  .darkdisplaytall{
+    min-height:330px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplaytall img{
+    height: 300px;
+    padding: 20px;
+
+  }
+
+  .light img{
+  float:right;
+  height: 300px;
+  align:right;
+  padding-left: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  }
+
+  .banner{
+    min-height:350px;
+    max-height:350px;
+    margin-top: 92px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/churchill-house-34.jpg');
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+
+    .banner h1{
+      font-family:Georgia;
+      margin-bottom:10px;
+      padding-top:125px;
+
+    }
+
+}
+
+@media
+(min-device-width: 414px)
+  and (max-device-width: 767px)   {
+
+/* These are the responsiveness settings for larger phones, many changes were made, see comments below */
+
+  header li{
+    float:left;
+    display:inline;
+    padding: 0 5px 0 5px;
+    margin-right: 25px;
+
+/* The header was the primary change necessary, with the logo reducing in size and the text changing to fit the new witdth */
+
+  }
+
+  header .logo {
+      width: 150px;
+      margin-left: 125px;
+
+  }
+
+  .pagetitle h1{
+    font-size:35px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    padding-top:25px;
+    text-align: left;
+
+/* Font sizes altered as they appeared too large */
+
+  }
+
+  .darkdisplay{
+    min-height:200px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplay img{
+    height: 200px;
+    padding: 20px;
+
+/* Image heights once again changed */
+
+  }
+
+  .darkdisplaytall{
+    min-height:350px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplaytall img{
+    height: 300px;
+    padding: 20px;
+
+  }
+
+  .light img{
+  float:right;
+  height: 300px;
+  align:right;
+  padding-left: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  }
+
+  .column h1{
+    font-size:20px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    text-align: center;
+
+  }
+
+  .column p, ul{
+    font-size:16px;
+    font-family:Georgia;
+    margin-bottom:35px;
+    -webkit-columns: 2 200px;
+    -moz-columns: 2 200px;
+    columns: 2 200px;
+
+/* This is the first instance of the font size changing. Although it DOES scale, maintaing the same size font appears too large on the high resolution of phone screens */
+
+  }
+
+  .light{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width:80%;
+    overflow:hidden;
+    margin-left: 10%;
+
+  }
+
+  .light h1{
+    font-size:20px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    text-align: center;
+
+  }
+
+  .light p{
+    font-size:16px;
+    font-family:Georgia;
+    margin-bottom:35px;
+
+  }
+
+  .light ul{
+    font-size:16px;
+    font-family:Georgia;
+    margin-bottom:35px;
+    -webkit-columns: 2 150px;
+    -moz-columns: 2 150px;
+    columns: 2 1000px;
+
+  }
+
+  .banner{
+    min-height:250px;
+    max-height:250px;
+    margin-top: 92px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/churchill-house-34.jpg');
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .banner h1{
+    font-size:35px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    padding-top:100px;
+
+  }
+
+  footer{
+    padding:10px;
+    margin-top:10px;
+    color:#ffffff;
+    background-color:#303030;
+    text-align: center;
+  }
+
+  footer p{
+    font-size: 8px;
+  }
+
+}
+
+@media
+(min-device-width: 375px)
+  and (max-device-width: 414px)   {
+
+/* These settings are tailored for phones that aren't considered large (e.g Iphone X) and only include slight alterations to the previous media query */
+
+  header li{
+    float:left;
+    display:inline;
+    padding: 0 5px 0 5px;
+    margin-right: 25px;
+  }
+
+  header a{
+    color:#303030;
+    text-decoration:none;
+    font-size:14px;
+
+  }
+
+  header .logo {
+      width: 125px;
+      margin-left: 125px;
+
+/* Logo once again changed, margin size increased for phone display to have logo in middle */
+
+  }
+
+    .pagetitle h1{
+      font-size:35px;
+      font-family:Georgia;
+      margin-bottom:10px;
+      padding-top:25px;
+      text-align: left;
+
+    }
+
+  .darkdisplay{
+    min-height:200px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplay img{
+    height: 200px;
+    padding: 20px;
+
+  }
+
+  .darkdisplaytall{
+    min-height:350px;
+    margin-top: 0px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+
+  }
+
+  .darkdisplaytall img{
+    height: 300px;
+    padding: 20px;
+
+  }
+
+  .light img{
+  float:right;
+  height: 300px;
+  align:right;
+  padding-left: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  }
+
+  .column h1{
+    font-size:20px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    text-align: center;
+
+  }
+
+  .column p, ul{
+    font-size:14px;
+    font-family:Georgia;
+    margin-bottom:35px;
+    -webkit-columns: 2 200px;
+    -moz-columns: 2 200px;
+    columns: 2 200px;
+
+  }
+
+  .light{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width:80%;
+    overflow:hidden;
+    margin-left: 10%;
+
+  }
+
+  .light h1{
+    font-size:20px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    text-align: center;
+
+  }
+
+  .light p{
+    font-size:14px;
+    font-family:Georgia;
+    margin-bottom:35px;
+
+  }
+
+  .light ul{
+    font-size:16px;
+    font-family:Georgia;
+    margin-bottom:35px;
+    -webkit-columns: 2 150px;
+    -moz-columns: 2 150px;
+    columns: 2 1000px;
+
+  }
+
+  .banner{
+    min-height:250px;
+    max-height:250px;
+    margin-top: 92px;
+    background-color: rgba(48, 48, 48);
+    text-align:center;
+    color:#FFFFFF;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/churchill-house-34.jpg');
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .banner h1{
+    font-size:35px;
+    font-family:Georgia;
+    margin-bottom:10px;
+    padding-top:100px;
+
+  }
+
+  footer{
+    padding:10px;
+    margin-top:10px;
+    color:#ffffff;
+    background-color:#303030;
+    text-align: center;
+  }
+/* Footer font size decreased as it was appearing similar to normal text size */
+  footer p{
+    font-size: 8px;
+  }
